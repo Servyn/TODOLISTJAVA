@@ -3,6 +3,7 @@ package com.example;
 import java.sql.Connection;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,8 +13,11 @@ public class Main {
             e.printStackTrace();
         }
         TaskManager tm = new TaskManager();
-        tm.completedTask(1);
-        tm.getAllTasks();
+//        tm.searchTaskByTitle("java");
+        List<Tasks> tasksList = tm.getAllTasks();
+        for (Tasks tasks: tasksList){
+            System.out.println(tasks.toString());
+        }
     }
 
 }
